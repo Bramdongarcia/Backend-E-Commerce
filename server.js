@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -14,5 +14,5 @@ app.use('/api/users', usersRoutes);
 app.use('/api/products', productsRoutes);
 
 app.listen(port, () => {
-  console.log(`Servidor corriendo exitosamente`);
+  console.log(`Servidor corriendo exitosamente PORT=`, port);
 });
