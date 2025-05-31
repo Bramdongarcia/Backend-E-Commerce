@@ -25,7 +25,7 @@ router.put("/:id", (req, res) => {
   const { Name, Last_Name, Phone, Direccion, Email, Contraseña } = req.body;
 
   db.query(
-    "UPDATE users SET Name = ?, Last_Name = ?, Phone = ?, Direccion = ?, Email = ?, Contraseña = ? WHERE id = ?",
+    "UPDATE users SET Name = ?, Last_Name = ?, Phone = ?, Direccion = ?, Email = ?, Contraseña = ? WHERE Id_Users = ?",
     [Name, Last_Name, Phone, Direccion, Email, Contraseña, id],
     (err, result) => {
       if (err) return res.status(500).json({ error: err });
